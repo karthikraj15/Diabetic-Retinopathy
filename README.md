@@ -1,14 +1,15 @@
-# Download input images from below link
+## Download input images from below link
 
-Input images :  [Link](https://github.com/avinassh/pytorch-flask-api-heroku)
+Create a input folder and download the images from the [Link](https://drive.google.com/drive/folders/1BCvUuxoWHSi1ABXuUJt0EdZfxl1SV2au)
 
 ## Installation
 
-Create a new python env:
+Create a new python env :
 
     conda create -n tf python=3.6
+    activate tf
 
-Install them from `requirements.txt`:
+Install requirements from `requirements.txt`:
 
     pip install -r requirements.txt
 
