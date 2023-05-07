@@ -1,6 +1,6 @@
 ## Download input images from below link
 
-Create a input folder and download the images from the [Link](https://drive.google.com/drive/folders/1BCvUuxoWHSi1ABXuUJt0EdZfxl1SV2au)
+Create a input folder and download the images from the [link](https://drive.google.com/drive/folders/1BCvUuxoWHSi1ABXuUJt0EdZfxl1SV2au)
 
 ## Installation
 
