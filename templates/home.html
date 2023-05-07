@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      @media (min-width: 995px) {
+        #add_border {
+          border-right: 1px solid black;
+        }
+      }
+
+      .jumbotron {
+        margin-bottom: 70px;
+        padding: 15px;
+      }
+
+    </style>
+    <script src="https://kit.fontawesome.com/33b3cdea20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Healthcare app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center" style="background-color:#38b8d2">
+        <h3>Private Diabetic Retinopathy Diagnosis App</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-xs-12 text-center" id = "add_border">
+          <i class="fas fa-hospital-user fa-8x mb-1"></i>
+          <form class="form-signin" method=post action="/patreg">
+            <p class="h4 mb-2 font-weight-normal">Enter The Patient Details! </p>
+              <input type="number" class="form-control" name="pid" class="form-control-file mb-2" id="pid" placeholder="Enter Patient Id" required="required"><br>
+              <input type="text" class="form-control" name="pname" class="form-control-file mb-2" id="pname" placeholder="Enter Patient Name" required="required"><br>
+              <select name="age" class="custom-select my-1 mr-sm-2" class="form-control-file mb-2" id="age">
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+            </select><br>
+              <input type="radio" id="Male" name="g1" value="Male" required="required">
+                <label for="Male">Male</label>
+               <input type="radio" id="Female" name="g1" value="Female" >
+                <label for="Female">Female</label><br><br>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button><br>
+              <button class="btn btn-lg btn-info btn-block" type="reset">Clear</button><br>
+          </form>
+        </div>
+
+        <div class="col-lg-6 col-xs-12 text-center">
+          <i class="fas fa-laptop-code fa-8x mb-4"></i>
+          <div class="description">
+           <form name="home" method="POST">
+            <input type="submit" onclick="return check(this.form)" class="btn btn-lg btn-secondary " value="Logout" formaction="/logout" >
+           </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $('#inputfile').bind('change', function() {
+          let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+          if($.inArray(ext, ['jpg','jpeg', 'png']) == -1) {
+            $("#inputfile").val(null);
+            alert('only jpeg/jpg/png files are allowed!');
+          }
+      });
+    </script>
+  </body>
+</html>

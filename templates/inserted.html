@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Successful</title>
+  <style>
+    /* Set the background color */
+    body {
+      background-color: #f3c98f;
+    }
+    /* Center the message and button */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /* Style the message */
+    h1 {
+      font-size: 3rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    /* Style the button */
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    /* Hover effect for the button */
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registered Successfully</h1>
+    <form action="/loginpage" method="POST">
+      <button type="submit">Click Here to Login</button>
+    </form>
+  </div>
+</body>
+</html>

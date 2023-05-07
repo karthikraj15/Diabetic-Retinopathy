@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      @media (min-width: 995px) {
+        #add_border {
+          border-right: 1px solid black;
+        }
+      }
+
+      .jumbotron {
+        margin-bottom: 70px;
+        padding: 15px;
+      }
+
+    </style>
+    <script src="https://kit.fontawesome.com/33b3cdea20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Healthcare app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center" style="background-color:#38b8d2"s>
+        <h3>Private Diabetic Retinopathy Diagnosis App</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-xs-12 text-center" id = "add_border">
+          <i class="fas fa-hospital-user fa-8x mb-1"></i>
+          <form class="form-signin" method=post action="/predict" enctype=multipart/form-data>
+            <p class="h4 mb-2 font-weight-normal">Upload your scan here! </p>
+              <input type="file" name="file" class="form-control-file mb-2" id="inputfile" required="required">
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Get Diagnosis</button><br>
+              <button class="btn btn-lg btn-primary btn-block" type="reset">Clear</button><br>
+              
+
+          </form>
+        </div>
+
+        <div class="col-lg-6 col-xs-12 text-center">
+          <i class="fas fa-laptop-code fa-8x mb-4"></i>
+          <div class="description">
+            {%if class_name%}
+            <h3 class="mb-3 font-weight-normal" style="color: blue">Diagnosis: {{ class_name }}</h3>
+            <p style="color: black">Please consult your medical professional for follow up steps.</p>
+            {%endif%}
+
+  
+            <form  method="POST" name="main">
+              <input type="submit" class="btn btn-success"  onclick="return check(this.form)" value="Download" formaction="/download" >
+              <input type="submit" class="btn btn-secondary"  onclick="return check(this.form)" value="Logout" formaction="/logout" >
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $('#inputfile').bind('change', function() {
+          let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+          if($.inArray(ext, ['jpg','jpeg', 'png']) == -1) {
+            $("#inputfile").val(null);
+            alert('only jpeg/jpg/png files are allowed!');
+          }
+      });
+    </script>
+  </body>
+</html>
