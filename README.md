@@ -1,8 +1,12 @@
 # Download input images from below link
 
-Input images :  [this repo](https://github.com/avinassh/pytorch-flask-api-heroku)
+Input images :  [Link](https://github.com/avinassh/pytorch-flask-api-heroku)
 
-## Requirements
+## Installation
+
+Create a new python env:
+
+    conda create -n tf python=3.6
 
 Install them from `requirements.txt`:
 
